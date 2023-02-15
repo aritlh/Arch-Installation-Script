@@ -28,7 +28,12 @@ mount --mkdir /dev/efi_system_partition /mnt/boot
 ```
 ### Install Essential Packages
 ```sh
-pacstrap -K /mnt base base-devel linux linux-firmware neovim networkmanager network-manager-applet grub efibootmgr linux-headers mtools git xdg-user-dirs
+pacstrap -K /mnt base iwd dhcpcd base-devel linux linux-firmware neovim networkmanager network-manager-applet grub efibootmgr linux-headers mtools git xdg-user-dirs
+```
+### Select a Mirrorlist
+```sh
+reflector --verbose --protocol https --latest 5 --sort rate --save /etc/pacman.d/mirrorlist
+pacman -Syy
 ```
 ### Configure the Systems
 ```sh
@@ -93,13 +98,6 @@ exit
 umount -a
 reboot  
 ```
-### Install iwd and dhcpcd
-Read more at [iwd](https://wiki.archlinux.org/title/iwd) and [dhcpcd](https://wiki.archlinux.org/title/dhcpcd)
-```sh
-sudo pacman -S iwd dhcpcd
-sudo systemctl enable iwd dhcpcd --now
-```
-Now, you can access wifi.
 
 # DWM Installation
 Soon
