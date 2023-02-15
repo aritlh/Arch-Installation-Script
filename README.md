@@ -1,22 +1,22 @@
 # DWM-Arch-Installation
 This is not a patented method. It depends on each person's needs. Therefore, there is no way to install a partition for swap here.
 
-## Update The System Clock
+## Update the System Clock
 ```shell
 timedatectl status
 timedatectl set-ntp true
 ```
-## Partition The Disks
+## Partition the Disks
 ```shell
 lsblk
 cfdisk
 ```
-## Format The Partitions
+## Format the Partitions
 ```sh
 mkfs.ext4 /dev/root_partition
 mkfs.fat -F 32 /dev/efi_system_partition
 ```
-## Mount The File Systems
+## Mount the File Systems
 ```sh
 mount /dev/root_partition /mntmnt
 mount --mkdir /dev/efi_system_partition /mnt/boot
@@ -25,7 +25,7 @@ mount --mkdir /dev/efi_system_partition /mnt/boot
 ```sh
 pacstrap -K /mnt base base-devel linux linux-firmware neovim networkmanager network-manager-applet grub efibootmgr linux-headers mtools git xdg-user-dirs
 ```
-## Configure The Systems
+## Configure the Systems
 ```sh
 genfstab -U /mnt >> /mnt/etc/fstab
 ```
@@ -47,7 +47,7 @@ Create the `/etc/locale.conf` file, and set the LANG variable accordingly:
 ```sh
 LANG=en_US.UTF-8
 ```
-## Network Config
+## Network Configuration 
 Create `/etc/hostname` with the name your host:
 ```sh
 nameFromYourHost
@@ -67,7 +67,7 @@ systemctl enable NetworkManager
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
-## Set The root Password
+## Set the root Password
 ```sh
 passwd
 ```
