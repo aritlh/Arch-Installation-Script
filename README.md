@@ -1,6 +1,8 @@
 # DWM-Arch-Installation
 This is not a patented method. It depends on each person's needs. Therefore, there is no way to install a partition for swap here.
 
+<img src="https://i.ibb.co/T09VR1f/2023-02-16-01-35.png" width="full" alt="2023-02-16-01-35" border="0">
+
 ## Table of Contents
 - [Arch Installation](#arch-installation)
 - [DWM Installation](#dwm-installation)
