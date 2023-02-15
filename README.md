@@ -1,6 +1,11 @@
 # DWM-Arch-Installation
 This is not a patented method. It depends on each person's needs. Therefore, there is no way to install a partition for swap here.
 
+## Table of Contents
+- [Arch Installation](#arch-installation)
+- [DWM Installation](#dwm-installation)
+
+# Arch Installation 
 ## Update the System Clock
 ```shell
 timedatectl status
@@ -88,3 +93,6 @@ exit
 umount -a
 reboot  
 ```
+
+# DWM Installation
+Soon
