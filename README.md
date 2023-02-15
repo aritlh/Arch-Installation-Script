@@ -23,7 +23,7 @@ mkfs.fat -F 32 /dev/efi_system_partition
 ```
 ### Mount the File Systems
 ```sh
-mount /dev/root_partition /mntmnt
+mount /dev/root_partition /mnt
 mount --mkdir /dev/efi_system_partition /mnt/boot
 ```
 ### Install Essential Packages
