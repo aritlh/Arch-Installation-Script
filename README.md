@@ -94,7 +94,7 @@ umount -a
 reboot  
 ```
 ### Install iwd and dhcpcd
-Read more at [iwctl](https://wiki.archlinux.org/title/iwd) and [dhcpcd](https://wiki.archlinux.org/title/dhcpcd)
+Read more at [iwd](https://wiki.archlinux.org/title/iwd) and [dhcpcd](https://wiki.archlinux.org/title/dhcpcd)
 ```sh
 sudo pacman -S iwd dhcpcd
 sudo systemctl enable iwd dhcpcd --now
