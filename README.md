@@ -6,44 +6,44 @@ This is not a patented method. It depends on each person's needs. Therefore, the
 - [DWM Installation](#dwm-installation)
 
 # Arch Installation 
-## Update the System Clock
+### Update the System Clock
 ```shell
 timedatectl status
 timedatectl set-ntp true
 ```
-## Partition the Disks
+### Partition the Disks
 ```shell
 lsblk
 cfdisk
 ```
-## Format the Partitions
+### Format the Partitions
 ```sh
 mkfs.ext4 /dev/root_partition
 mkfs.fat -F 32 /dev/efi_system_partition
 ```
-## Mount the File Systems
+### Mount the File Systems
 ```sh
 mount /dev/root_partition /mntmnt
 mount --mkdir /dev/efi_system_partition /mnt/boot
 ```
-## Install Essential Packages
+### Install Essential Packages
 ```sh
 pacstrap -K /mnt base base-devel linux linux-firmware neovim networkmanager network-manager-applet grub efibootmgr linux-headers mtools git xdg-user-dirs
 ```
-## Configure the Systems
+### Configure the Systems
 ```sh
 genfstab -U /mnt >> /mnt/etc/fstab
 ```
-## Chroot
+### Chroot
 ```sh
 arch-chroot /mnt
 ```
-## Time Zone
+### Time Zone
 ```sh
 ln -sf /usr/share/zoneinfo/Region/City /etc/localtime
 hwclock --systohc
 ```
-## Localization
+### Localization
 Edit `/etc/locale.gen` and uncomment `en_US.UTF-8 UTF-8` and other needed locales. Generate the locales by running:
 ```sh
 locale-gen
@@ -52,7 +52,7 @@ Create the `/etc/locale.conf` file, and set the LANG variable accordingly:
 ```sh
 LANG=en_US.UTF-8
 ```
-## Network Configuration 
+### Network Configuration 
 Create `/etc/hostname` with the name your host:
 ```sh
 nameFromYourHost
@@ -67,16 +67,16 @@ Enable Network Manager
 ```sh
 systemctl enable NetworkManager
 ```
-## Install GRUB
+### Install GRUB
 ```sh
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
-## Set the root Password
+### Set the root Password
 ```sh
 passwd
 ```
-## Create a New User
+### Create a New User
 ```sh
 useradd -m -G wheel yourUsername
 passwd yourUsername  
@@ -84,10 +84,10 @@ export EDITOR=nvim
 ```
 Edit `/etc/sudoers` run “visudo” and uncomment the following line:
 ```sh
-## Uncomment to allow members of group wheel to execute any command
+### Uncomment to allow members of group wheel to execute any command
 %wheel ALL=(ALL) ALL
 ```
-## Exit, Umount, and Reboot
+### Exit, Umount, and Reboot
 ```sh
 exit
 umount -a
