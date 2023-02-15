@@ -58,3 +58,33 @@ Create `/etc/hosts`:
 ::1         localhost
 127.0.0.1   nameFromYourHost.localdomain nameFromYourHost
 ```
+Enable Network Manager
+```sh
+systemctl enable NetworkManager
+```
+## Install GRUB
+```sh
+grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
+grub-mkconfig -o /boot/grub/grub.cfg
+```
+## Set the root Password
+```sh
+passwd
+```
+## Create a New User
+```sh
+useradd -m -G wheel yourUsername
+passwd yourUsername  
+export EDITOR=nvim
+```
+Edit `/etc/sudoers` run “visudo” and uncomment the following line:
+```sh
+## Uncomment to allow members of group wheel to execute any command
+%wheel ALL=(ALL) ALL
+```
+## Exit, Umount and Reboot
+```sh
+exit
+umount -a
+reboot  
+```
