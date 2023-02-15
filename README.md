@@ -78,7 +78,7 @@ passwd
 ```
 ### Create a New User
 ```sh
-useradd -m -G wheel yourUsername
+useradd -mG wheel yourUsername
 passwd yourUsername  
 export EDITOR=nvim
 ```
