@@ -94,14 +94,12 @@ umount -a
 reboot  
 ```
 ### Install iwd and dhcpcd
-**iwctl** is a command-line utility used to manage wireless network connections on the Arch Linux operating system. Iwctl allows users to search for available Wi-Fi networks, select a network to connect to, configure passwords or access credentials, and more.
-
-**dhcpcd** is a Dynamic Host Configuration Protocol (DHCP) client used to automatically configure IP addresses and other network information on the Arch Linux operating system. dhcpcd offers the ability to retrieve IP addresses from a DHCP server and set other network settings such as DNS and gateway automatically.
-
-These two utilities are used together on Arch Linux systems to set up wireless network connections and configure IP addresses automatically via the DHCP protocol.
+Read more at [iwctl](https://wiki.archlinux.org/title/iwd) and [dhcpcd](https://wiki.archlinux.org/title/dhcpcd)
 ```sh
 sudo pacman -S iwd dhcpcd
 sudo systemctl enable iwd dhcpcd --now
 ```
+Now, you can access wifi.
+
 # DWM Installation
 Soon
