@@ -1,31 +1,31 @@
 # DWM-Arch-Installation
 This is not a patented method. It depends on each person's needs. Therefore, there is no way to install a partition for swap here.
 
-## Update the system clock
+## Update The System Clock
 ```shell
 timedatectl status
 timedatectl set-ntp true
 ```
-## Partition the disks
+## Partition The Disks
 ```shell
 lsblk
 cfdisk
 ```
-## Format the partitions
+## Format The Partitions
 ```sh
 mkfs.ext4 /dev/root_partition
 mkfs.fat -F 32 /dev/efi_system_partition
 ```
-## Mount the file systems
+## Mount The File Systems
 ```sh
 mount /dev/root_partition /mntmnt
 mount --mkdir /dev/efi_system_partition /mnt/boot
 ```
-## Install essential packages
+## Install Essential Packages
 ```sh
 pacstrap -K /mnt base base-devel linux linux-firmware neovim networkmanager network-manager-applet grub efibootmgr linux-headers mtools git xdg-user-dirs
 ```
-## Configure the systems
+## Configure The Systems
 ```sh
 genfstab -U /mnt >> /mnt/etc/fstab
 ```
@@ -33,7 +33,7 @@ genfstab -U /mnt >> /mnt/etc/fstab
 ```sh
 arch-chroot /mnt
 ```
-## Time zone
+## Time Zone
 ```sh
 ln -sf /usr/share/zoneinfo/Region/City /etc/localtime
 hwclock --systohc
@@ -67,7 +67,7 @@ systemctl enable NetworkManager
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
-## Set the root Password
+## Set The root Password
 ```sh
 passwd
 ```
@@ -82,7 +82,7 @@ Edit `/etc/sudoers` run “visudo” and uncomment the following line:
 ## Uncomment to allow members of group wheel to execute any command
 %wheel ALL=(ALL) ALL
 ```
-## Exit, Umount and Reboot
+## Exit, Umount, and Reboot
 ```sh
 exit
 umount -a
