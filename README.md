@@ -1,7 +1,7 @@
 # DWM-Arch-Installation
 This is not a patented method. It depends on each person's needs. Therefore, there is no way to install a partition for swap here.
 
-![image](./image.png)
+![image](/imgs/image.png)
 
 ## Table of Contents
 - [Arch Installation](#arch-installation)
