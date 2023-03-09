@@ -3,7 +3,7 @@
 This is not a patented method. It depends on each person's needs. Therefore,
 there is no way to install a partition for swap here.
 
-![image](../DWM-Arch-Installation/imgs/iusearchbtw.png)
+![image](./imgs/iusearchbtw.png)
 
 ## Table of Contents
 
