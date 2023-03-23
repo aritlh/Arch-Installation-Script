@@ -1,0 +1,15 @@
+#!/bin/bash
+
+function screenshot {
+	options="Screenshot\nSelect Area\nActive Window"
+	selected=$(echo -e $options | dmenu -l 3 -p "Screenshot")
+	if [[ $selected = "Screenshot" ]]; then
+		scrot -q 100 -d 1 '%Y-%m-%d_$wx$h.png' -e 'notify-send "Screenshot" "Tangkapan layar telah disimpan!" && mv $f ~/Pictures/ss && xclip -selection clipboard -t image/png -i ~/Pictures/ss/$f'
+	elif [[ $selected = "Select Area" ]]; then
+		scrot -q 100 -d 1 -s '%Y-%m-%d_$wx$h.png' -e 'notify-send "Screenshot" "Tangkapan layar telah disimpan!" && mv $f ~/Pictures/ss && xclip -selection clipboard -t image/png -i ~/Pictures/ss/$f'
+	elif [[ $selected = "Active Window" ]]; then
+		scrot -q 100 -d 1 -u '%Y-%m-%d_$wx$h.png' -e 'notify-send "Screenshot" "Tangkapan layar telah disimpan!" && mv $f ~/Pictures/ss && xclip -selection clipboard -t image/png -i ~/Pictures/ss/$f'
+	fi
+}
+
+screenshot
