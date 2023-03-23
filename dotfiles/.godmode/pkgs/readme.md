@@ -1,4 +1,4 @@
--Qeq: base
--Qq : all pkgs
--Qmq: aur pkgs
--Qdq: only dep pkgs
+- Qeq: base
+- Qq : all pkgs
+- Qmq: aur pkgs
+- Qdq: only dep pkgs
