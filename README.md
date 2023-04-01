@@ -1,4 +1,4 @@
-# DWM-Arch-Installation
+# dotfiles
 
 This is not a patented method. It depends on each person's needs. Therefore,
 there is no way to install a partition for swap here.
