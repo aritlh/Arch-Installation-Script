@@ -147,4 +147,4 @@ reboot
 
 # DWM Installation
 
-Soon
+I use dwm-flexipatch 
