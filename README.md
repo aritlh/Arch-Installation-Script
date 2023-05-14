@@ -145,6 +145,24 @@ umount -a
 reboot
 ```
 
+### (optional) Mounting Disk Partition
+```sh
+# /dev/sda2
+UUID=******b49-******-4******-******30-******949c	/         	ext4      	rw,relatime	0 1
+
+# /dev/sda1
+UUID=******-******      	/boot     	vfat      	rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=ascii,shortname=mixed,utf8,errors=remount-ro	0 2
+
+# /dev/sda2
+UUID=f******-9***-4***-9***-******92949c	/         	ext4      	rw,relatime	0 1
+
+# /dev/sda1
+UUID=******-******      	/boot     	vfat      	rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=ascii,shortname=mixed,utf8,errors=remount-ro	0 2
+
+# /dev/sda3
+/dev/disk/by-uuid/12***d*a-****-****-****-************ff /home/renology ext4 defaults 0 2
+```
+
 # DWM Installation
 
 I use dwm-flexipatch 
