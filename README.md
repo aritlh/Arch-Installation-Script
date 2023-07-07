@@ -3,7 +3,7 @@
 This is not a patented method. It depends on each person's needs. Therefore,
 there is no way to install a partition for swap here.
 
-![image](./imgs/iusearchbtw.png)
+![image](https://i.imgur.com/0YLhUeV.jpg)
 
 ## Table of Contents
 
